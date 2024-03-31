@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wise Expression CRUD APP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Expressions (Idioms, Proverbs and Quotes)</h1>
+    <div>
+        <h4>In the "Contributor Name" field, type your name.</h4>
+        <h4>For quote, type the author in front of the quote in the expression field. e.g. : 'You cannot find peace by avoiding life' – Virginia Woolf</h4>
+        <h4>For idioms/proverbs, type only the idioms/proverbs in the expression field.</h4>
+    </div>
+    
+    
+
+    <h2>Add Expression:</h2>
+
+    <form action="/addExpression" method="POST" id="formSubmit">
+        <input type="text" placeholder="Contributor Name" name="contributor" class="required">
+        <input type="text" placeholder="Expression" name="expression" class="required">
+        <select name="classification">
+            <option value="idiom">Idiom</option>
+            <option value="proverb">Proverb</option>
+            <option value="quote">Quote</option>
+        </select>
+        <input id="explanation" type="text" placeholder="Explanation" name="explanation" class="required">
+        <input type="submit" value="Add yours">
+    </form>
+
+    <ul class="goodExpression">
+    <% for(let i=0; i < info.length; i++) {%>
+        <li class="greatExpression" data-expression-id="<%= info[i]._id %>">
+            <p>Contributor: <i><%= info[i].contributor %></i></p>
+            <p>Expression: <i><%= info[i].expression %></i></p>
+            <p>Type: <i><%= info[i].classification %></i></p>
+            <p>Explanation: <i><%= info[i].explanation %></i></p>
+            <p class='fa fa-heart'></p>
+            <span><%= info[i].likes %></span>
+            <span class='fa fa-trash'></span>
+        </li>
+    <% } %>
+    </ul>
+
+    
+    <h5> <b>&copy; WISE EXPRESSION CRUD APP. All rights reserved.  Afeez Adewumi.</h5>
+
+    <script src='js/main.js'></script>
+</body>
+</html>
