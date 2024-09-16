@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="/style.css" />
+    <!--GOOGLE FONT-->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500&display=swap"
+      rel="stylesheet"
+    /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:ital,wght@1,300&family=Roboto+Slab:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <!--ICONS-->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section class="todo-container">
+      <h2>To Do List</h2>
+      <section class="todo">
+        <form action="/" method="POST" class="todo-header">
+          <input type="text" name="title" placeholder="title" />
+          <textarea
+            rows="6"
+            cols="45"
+            name="content"
+            placeholder="content"
+          ></textarea>
+          <button type="submit">
+            <span class="fas fa-plus">Add Task</span>
+          </button>
+        </form>
+        <ul class="todo-list">
+          <% todoTasks.forEach(details => { %>
+          <li class="todo-list-item">
+            <div class="todo-list-item-title"><%= details.title %></div>
+            <div class="todo-list-item-content"><%= details.content %></div>
+            <a href="/edit/<%= details._id %>" class="edit">
+              <span class="fas fa-edit"></span>
+            </a>
+            <a href="/remove/<%= details._id %>" class="remove">
+              <span class="fas fa-times"></span>
+            </a>
+          </li>
+          <% }) %>
+        </ul>
+      </section>
+    </section>
+  </body>
+</html>
