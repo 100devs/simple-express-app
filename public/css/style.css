@@ -1,0 +1,66 @@
+body {
+    background-color: #efefef;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    width: 30%;
+    margin: 5% auto;
+    border-radius: 10px;
+}
+
+input {
+    padding: 10px;
+    width: 50%;
+}
+
+button {
+    display: block;
+    width: 20%;
+    padding: 10px;
+    margin: 10px auto;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+h1 {
+    color: black;
+}
+
+textarea {
+    width: 90%;
+}
+
+
+
+.output {
+    width: 30%;
+    height: 200px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    float: left;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.fa {
+    cursor: pointer;
+    padding: 0 10px;
+
+}
+
+.fas {
+    cursor: pointer;
+}
+
+.icon {
+    display: flex;
+
+}
