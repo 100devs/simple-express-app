@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CATS APP</title>
+</head>
+<body>
+  <h1>So many CATS, so little time...</h1>
+
+  <form action="/songs" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="song" name="song">
+    <button type="submit">Submit</button>
+  </form>
+  <br>
+  
+  <ul class="songs">
+    <!-- Loop through quotes -->
+    <% for(var i = 0; i < songs.length; i++) {%>
+      <li class="song">
+        <!-- Output name from the iterated quote object -->
+        <span><%= songs[i].name %></span>:
+        <!-- Output quote from the iterated quote object -->
+        <span><%= songs[i].song %></span>
+        <span id="delete-button">DELETE</span>
+      </li>
+    <% } %>
+  </ul>
+<script src="/main.js"></script>
+</body>
+</html>
