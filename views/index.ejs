@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pug Kennel Activities</title>
+</head>
+<body>
+    <h1>Pug Kennel Activities</h1>
+    <div>
+        <h2>Pug Activities</h2>
+        <form action="/activities" method="POST">
+            <input type="text" placeholder="pug/cat" name="name">
+            <input type="text" placeholder="activity" name="activity">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <h2>Pug Activities!</h2>
+
+    <ul class="activities">
+        <% for (let i = 0; i < activities.length; i++) {%>
+            <li class="activity">
+                <span><%= activities[i].name %></span>:
+
+                <span><%= activities[i].activity%></span>
+            </li>
+        <% } %>
+    </ul>
+    <div>
+        <h2>Kitty Attack!</h2>
+        <p>
+            Replace first Pug Activity with an evil Cat Attack
+        </p>
+        <button id="update-button">Replace Pug Activity</button>
+    </div>
+    <div>
+        <h2>Kick the Kitty out of the Kennel!</h2>
+        <p>
+            Delete one of the evil cat's activities. Does nothing if all the nasty cat's activities are gone.
+        </p>
+        <button id="delete-button">Delete Evil Cat Activity</button>
+    </div>
+    <div id="message"></div>
+    <script src="/main.js"></script>
+</body>
+</html>
